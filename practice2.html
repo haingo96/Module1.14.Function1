@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Temperature Converter</h2>
+<p>Type a value in the Fahrenheit field to convert the value</p>
+<span>Fahrenheit</span>
+<input type="number" id="inputFahrenheit">
+<p id="outputCelsius"></p>
+
+<script>
+    let inputFahrenheit = document.getElementById('inputFahrenheit')
+    inputFahrenheit.addEventListener('keyup', printCelsius)
+
+    function getInputFahrenheit() {
+        return inputFahrenheit.value
+    }
+    function convertFahrenheit(fahrenheitDegree) {
+        return (fahrenheitDegree - 32) / 1.8
+    }
+
+    function printCelsius(){
+        let result = convertFahrenheit(getInputFahrenheit())
+        convertFahrenheit(getInputFahrenheit())
+        document.getElementById('outputCelsius').innerText = `Celsius = ${result}`
+    }
+</script>
+</body>
+</html>
